@@ -12,5 +12,7 @@
     %link{:crossorigin => "anonymous", :href => "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", :integrity => "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", :rel => "stylesheet"}/
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     %script{:async => "", :defer => "defer", :src => "https://buttons.github.io/buttons.js"}
+    = csrf_meta_tags
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
   = yield
