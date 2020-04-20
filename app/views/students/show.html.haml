@@ -34,7 +34,7 @@
         を全て削除しますか？
         %br
         %i.material-icons delete_forever
-        = link_to "削除する", student_path(@student.id), method: :delete, data: { confirm: '本当に削除しますか?' }
+        = link_to "削除する", student_path(@student.id), method: :delete
         %i.material-icons edit
         = link_to "編集する", edit_student_path(@student.id), class: "postManage__edit"
       %br
