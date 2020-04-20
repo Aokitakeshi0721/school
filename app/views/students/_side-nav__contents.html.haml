@@ -1,0 +1,47 @@
+.side-nav__content
+  .side-nav__content__name
+    %a.nav-link.active{:href => "/"}
+      %i.material-icons table_chart
+      %span Class Tables
+  -# = link_to "/"
+  -#   %i.material-icons table_chart
+  -#   Class Tables
+
+
+.side-nav__content
+  .side-nav__content__name
+    -# %a.nav-link{:href => "user-profile-lite.html"}
+    %i.material-icons person
+    %span Student profile
+.side-nav__content
+  .side-nav__content__name
+    -# %a.nav-link{:href => "errors.html"}
+    %i.material-icons error
+    %span Attendance
+
+.side-nav__content
+  .side-nav__content__name
+    -# %a.nav-link{:href => "add-new-post.html"}
+    %i.material-icons note_add
+    %span Academic guidance
+.side-nav__content
+  .side-nav__content__name
+    -# %a.nav-link{:href => "index.html"}
+    %i.material-icons edit
+    %span Dashborads
+.side-nav__content
+  .side-nav__content__name
+    -# %a.nav-link{:href => "form-components.html"}
+    %i.material-icons view_module
+    %span Achievement Analysis
+
+.side-nav__content
+  .side-nav__content__name
+    %i.material-icons cloud_download CSV FILE DOWNLOAD
+
+.side-nav__content
+  .side-nav__content__name
+    %i.material-icons cloud_upload CSV FILE UPLOAD
+    = form_tag import_students_path, multipart: true do
+      = file_field_tag :file
+      = submit_tag "インポート"

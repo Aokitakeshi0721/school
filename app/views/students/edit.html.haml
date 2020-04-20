@@ -1,0 +1,41 @@
+.side-wrapper
+  .side-header
+    .side-header-icon
+      %a.nav-link.active{:href => "/"}
+        %i.material-icons edit
+    .side-header-title
+      = link_to "School Management", '/'
+      %br
+      -# = link_to "System", datatable_testpage_index_path
+      -# = link_to "新規投稿", 'sms_p/new'
+  .side-nav
+    .side-nav__contents
+      = render "side-nav__contents"
+.main-wrapper
+  .main-header
+    %form
+      %input.main-header__search-field{:type => "text", placeholder: "Search for student data"}/
+    .icons
+      -# .icons__icon
+      -#   .icons__icon--trash
+      -#     %i.fas.fa-trash
+      .icons__icon
+        .icons__icon--cog
+          %i.fas.fa-cog
+  .right-content
+    .data-tables
+      -# .data-table
+      -#   .data-table__text
+      .item1-pic
+      .item2-detail-upper
+      .item3-comment
+      .item4-detail-bottom
+
+
+
+
+
+
+
+      .date-table-bottom
+        =render "edit-profile-student"

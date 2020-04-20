@@ -1,0 +1,157 @@
+.side-wrapper
+  .side-header
+    .side-header-icon
+      %a.nav-link.active{:href => "/"}
+        %i.material-icons delete
+    .side-header-title
+      = link_to "School Management", '/'
+      %br
+      -# = link_to "System", datatable_testpage_index_path
+      -# = link_to "新規投稿", 'sms_p/new'
+  .side-nav
+    .side-nav__contents
+      = render "side-nav__contents"
+.main-wrapper
+  .main-header
+    %form
+      %input.main-header__search-field{:type => "text", placeholder: "Search for student data"}/
+    .icons
+      -# .icons__icon
+      -#   .icons__icon--trash
+      -#     %i.fas.fa-trash
+      .icons__icon
+        .icons__icon--cog
+          %i.fas.fa-cog
+  .right-content
+    .data-tables
+      .data-table__text
+        =@student.学籍番号
+        　
+        =@student.クラス名
+        クラス
+        　
+        =@student.フリガナ名
+        を全て削除しますか？
+        %br
+        %i.material-icons delete_forever
+        = link_to "削除する", student_path(@student.id), method: :delete
+        　
+        %i.material-icons edit
+        = link_to "編集する", edit_student_path(@student.id), class: "postManage__edit"
+      %br
+        .data-table
+          %table
+            %tr
+              %th 学籍番号
+              %th 登録番号
+              -# %th 本国氏名書体
+              %th クラス名
+              %th 本国氏名1
+              %th 本国氏名2
+              %th フリガナ名
+              %th 性別
+              %th 未既婚
+              %th 国名
+              %th 生年月日
+              %th 紹介者名
+              %th 本国住所書体
+              %th 本国住所
+              %th 本国電話
+              %th 旅券番号
+              %th 旅券有効期限
+              %th 入国年月日
+              -# %th 生VISA種類
+              -# %th VISA更新日1
+              -# %th VISA更新日2
+              -# %th VISA更新日3
+              -# %th VISA更新日4
+              -# %th 入管許可番号
+              -# %th 入管許可日
+              -# %th 在留カード番号
+              -# %th 入学日
+              -# %th 卒修予定日
+              -# %th コース名
+
+              -# %th 退学年月日
+              -# %th 除籍年月日
+              -# %th 退学除籍理由
+              -# %th 在籍卒業区分
+              -# %th 以前住所〒
+              -# %th 以前住所住
+              -# %th 現住所〒
+              -# %th 現住所住
+              -# %th 現住所電話
+              -# %th 携　帯電話
+              -# %th 国民健康保険番号
+              -# %th 障害保険有無
+              -# %th 母国語
+              -# %th 卒業後進路先
+              -# %th 紹介者書体
+              -# %th 紹介者名1
+              -# %th 紹介者名2
+              -# %th 紹介者住所1
+              -# %th 紹介者住所2
+              -# %th 紹介者TEL
+              -# %th 紹介者FAX
+              -# %th J   ﾃｽﾄ
+              -# %th NAT ﾃｽﾄ
+              -# %th 入学ﾃｽﾄ
+              -# %th 組分ﾃｽﾄ
+            %tr
+              %td= @student.学籍番号
+              %td= @student.登録番号
+              -# %td= @student.本国氏名書体
+              %td= @student.クラス名
+              %td= @student.本国氏名1
+              %td= @student.本国氏名2
+              %td= @student.フリガナ名
+              %td= @student.性別
+              %td= @student.未既婚
+              %td= @student.国名
+              %td= @student.生年月日
+              %td= @student.紹介者名
+              %td= @student.本国住所書体
+              %td= @student.本国住所
+              %td= @student.本国電話
+              %td= @student.旅券番号
+              %td= @student.旅券有効期限
+              %td= @student.入国年月日
+              -# %td= @student.生VISA種類
+              -# %td= @student.VISA更新日1
+              -# %td= @student.VISA更新日2
+              -# %td= @student.VISA更新日3
+              -# %td= @student.VISA更新日4
+              -# %td= @student.入管許可番号
+              -# %td= @student.入管許可日
+              -# %td= @student.在留カード番号
+              -# %td= @student.入学日
+              -# %td= @student.卒修予定日
+              -# %td= @student.コース名
+
+              -# %td= @student.退学年月日
+              -# %td= @student.除籍年月日
+              -# %td= @student.退学除籍理由
+              -# %td= @student.在籍卒業区分
+              -# %td= @student.以前住所〒
+              -# %td= @student.以前住所住
+              -# %td= @student.現住所〒
+              -# %td= @student.現住所住
+              -# %td= @student.現住所電話
+              -# %td= @student.携　帯電話
+              -# %td= @student.国民健康保険番号
+              -# %td= @student.障害保険有無
+              -# %td= @student.母国語
+              -# %td= @student.卒業後進路先
+              -# %td= @student.紹介者書体
+              -# %td= @student.紹介者名1
+              -# %td= @student.紹介者名2
+              -# %td= @student.紹介者住所1
+              -# %td= @student.紹介者住所2
+              -# %td= @student.紹介者TEL
+              -# %td= @student.紹介者FAX
+              -# %td= @student.Jﾃｽﾄ
+              -# %td= @student.NATﾃｽﾄ
+              -# %td= @student.組分ﾃｽﾄ
+        %br
+        %i.material-icons home
+        = link_to "トップに戻る", '/'

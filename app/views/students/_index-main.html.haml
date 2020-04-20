@@ -1,0 +1,41 @@
+.side-wrapper
+  .side-header
+    .side-header-icon
+      %a.nav-link.active{:href => "/"}
+        %i.material-icons school
+    .side-header-title
+      = link_to "School Management", '/'
+      %br
+      System
+      
+  .side-nav
+    .side-nav__contents
+      = render "side-nav__contents"
+
+.main-wrapper
+  .main-header
+    %form
+      %input.main-header__search-field{:type => "text", placeholder: "Search for student data"}/
+    .icons
+      -# .icons__icon
+      -#   .icons__icon--trash
+      -#     %i.fas.fa-trash
+      .icons__icon
+        .icons__icon--cog
+          %i.fas.fa-cog
+  .right-content
+    .data-tables
+      .data-table__text
+        -# OVERVIEW
+        -# %br
+        Class Tables
+        %br
+        -# %button.mb-2.btn.btn-sm.btn-pill.btn-outline-primary.mr-2{:type => "button"}
+        %i.material-icons.mr-1> person_add
+        -# %span 新規登録
+        = link_to "新規登録", new_student_path
+        　
+        -# %i.material-icons table_chart
+        -# = link_to "全情報表示", datatable_testpage_index_path
+        .data-table
+          =render "data-tables"
