@@ -62,15 +62,16 @@ body {
     width: 100%;
     float: left;
     &__content{
+      
       color: #3D5170;
       height: 60px;
       width: 100%;
-      border-bottom-style: solid;
       border-width:1px;
       border-color: #CACEDB;
       padding-left: 18px;
       line-height: 60px;
       text-decoration:none;
+      border-bottom-style: solid;
       .material-icons{
         color: #CACEDB;
         font-size: 15px;
@@ -169,6 +170,20 @@ body {
   .data-table__text{
     width: 100%;
     text-align: left;
+    font-size: 25px;
+    color: #3D5170;
+    a{
+      text-decoration:none;
+      // color: #3D5170;
+      font-size: 17px;
+      color: #3D5170;
+    }
+    i{
+      text-decoration:none;
+      color: #CACEDB;
+      font-size: 18px;
+      padding-right: 5px;
+    }
   }
   .data-table__user-name{
     font-size: 12px;
@@ -192,45 +207,118 @@ body {
   text-align: right;
   box-shadow: 0 0 8px gray;
 }
+  .pic{
+    height: 55%;
+    width: 100%;
+    background-color: #878ecd;
+  }
+  .numclass{
+    height: 5%;
+    width: 100%;
+    // line-height: 60px;
+    text-align: center;
+    color: #3D5170;
+    font-size: 11px;
+    padding-top: 6px;
+    border-top-style: solid;
+    border-width:1px;
+    border-color: #CACEDB;
+  }
+  .name{
+    height: 10%;
+    width: 100%;
+    // line-height: 60px;
+    text-align: center;
+    color: #3D5170;
+    font-size: 15px;
+    // padding-top: 5px;
+    font-weight: bold;
+  }
+  .wrapper{
+    height: 30%;
+    width: 100%;
+  }
+    .attendance{
+      height: 50%;
+      width: 100%;
+      border-top-style: solid;
+      border-width:1px;
+      border-color: #CACEDB;
+    }
+    .achieve{
+      height: 50%;
+      width: 100%;
+      border-top-style: solid;
+      border-width:1px;
+      border-color: #CACEDB;
+    }
+
+
 .item2-detail-upper{
+  // overflow: scroll;
   float: right;
   height: 95%;
   width: 79%;
-  background-color: #fdffba;
+  background-color: #fff;
   color: #444;
-  padding: 10px;
+  // padding: 10px;
   margin-bottom: 20px;
   border-radius: 10px;
   text-align: right;
   box-shadow: 0 0 8px gray;
 }
+  .card-header{
+    padding: 10px 0 0 10px;
+  }
+    .card-header__title{}
+  .list-item-group{}
+    .name-group{}
+    .status1{}
+    .phonegroup{}
+
 
 .item3-comment{
   float: left;
   height: 50%;
   width: 49%;
-  background-color: #c0ffc2;
+  background-color: #fdfdfd;
   color: #444;
   padding: 10px;
-  // margin-top: 10px;
   border-radius: 10px;
-  text-align: right;
   box-shadow: 0 0 8px gray;
+  overflow: scroll;
 }
+  .interview-header{
+    float: left;
+    height: 20%;
+    width: 100%;
+    color: #3D5170;
+    font-size: 30px;
+    padding-top: 5px;
+    font-weight: bold;
+  }
+  .interview-form{
+    float: left;
+    height: 80%;
+    width: 100%;
+  }
 
 .item4-detail-bottom{
   float: right;
   height: 50%;
   width: 49%;
-  background-color: #ffeab6;
+  background-color: #ffffff;
   color: #444;
   padding: 10px;
-  margin-bottom: 10px;
   border-radius: 10px;
-  text-align: right;
   box-shadow: 0 0 8px gray;
 }
-
+  .others{
+    float: left;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+  }
 
 
 

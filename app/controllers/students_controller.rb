@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
   def update
     student = Student.find(params[:id])
     student.update(student_params)
-    redirect_to root_path
+    redirect_to edit_student_path(student.id)
   end
 
   def destroy

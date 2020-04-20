@@ -1,8 +1,7 @@
 %table
   = form_tag({ controller: :students, action: :destroy_all },method: 'delete', data: { confirm: '本当に削除しますか?' }) do # form_tagは何も指定しないとcreateが実行されてしまうので、method等は指定してあげてください
     %tr
-      %th= submit_tag "一括削除!"
-      %th 削除
+      %th= submit_tag "削除"
       %th 学籍番号
       -# %th 登録番号
       -# %th 本国氏名書体
@@ -61,7 +60,7 @@
     - @students.each do |s|
       %tr
         %td= check_box_tag "deletes[#{ s.id }]", s.id
-        %td= link_to "☑", student_path(s.id)
+        -# %td= link_to "☑", student_path(s.id)
         -# %i.material-icons delete_forever
         %td= link_to s.学籍番号, edit_student_path(s.id)
         -# %td= link_to s.学籍番号, sms_p_path(s.id)

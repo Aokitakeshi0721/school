@@ -4,10 +4,9 @@
       %a.nav-link.active{:href => "/"}
         %i.material-icons edit
     .side-header-title
-      = link_to "School Management", '/'
+      = link_to "STUDENT", '/'
       %br
-      -# = link_to "System", datatable_testpage_index_path
-      -# = link_to "新規投稿", 'sms_p/new'
+      EDIT
   .side-nav
     .side-nav__contents
       = render "side-nav__contents"
@@ -16,42 +15,305 @@
     %form
       %input.main-header__search-field{:type => "text", placeholder: "Search for student data"}/
     .icons
-      -# .icons__icon
-      -#   .icons__icon--trash
-      -#     %i.fas.fa-trash
       .icons__icon
         .icons__icon--cog
           %i.fas.fa-cog
   .right-content
     .data-tables
-      -# .data-table
-      -#   .data-table__text
--# 以下プロフィールエディットページ
+      %i.material-icons home
+      = link_to "トップに戻る", '/'
+      　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+      %i.material-icons delete_forever
+      = link_to "この学生を削除する", student_path(@student.id), method: :delete, data: { confirm: '本当に削除しますか?' }
+      　
+      %i.material-icons.mr-1> person_add
+      = link_to "新規登録", new_student_path
+      　
+
       .item1-pic
-      -#   .pic
-      -#   .name
-      -#   .numclass
-      -#   %u.wrapper
-      -#     %l.attendance
-      -#     %l.achieve
+        .pic
+          = image_tag 'kao1.jpeg'
+        .numclass
+          = @student.クラス名
+          　
+          = @student.学籍番号
+        .name
+          = @student.フリガナ名
+          %br
+          = @student.本国氏名1
+          = @student.本国氏名2 
+        .wrapper
+          .attendance
+          .achieve
       .item2-detail-upper
-      -#   .card-header
-      -#     .card-header__title
-      -#   %l.list-item-group
-      -#     .name-group
+        .card-header
+          .card-header__title
+          = form_for @student do |form|
+            %table
+              %tr
+                %th 学籍番号
+                %th 登録番号
+                %th 本国氏名書体
+                %th 本国氏名1
+                %th 本国氏名2
+                %th フリガナ名
+                %th 性別
+                %th 未既婚
+              %tr
+                %td= form.text_field :学籍番号
+                %td= form.text_field :登録番号
+                %td= form.text_field :本国氏名書体
+                %td= form.text_field :本国氏名1
+                %td= form.text_field :本国氏名2
+                %td= form.text_field :フリガナ名
+                %td= form.text_field :性別
+                %td= form.text_field :未既婚
+              %tr
+                %th 国名
+                %th 生年月日
+                %th 紹介者名
+                %th 本国住所書体
+                %th 本国住所
+                %th 本国電話
+                %th 旅券番号
+                %th 旅券有効期限
+              %tr
+                %td= form.text_field :国名
+                %td= form.text_field :生年月日
+                %td= form.text_field :紹介者名
+                %td= form.text_field :本国住所書体
+                %td= form.text_field :本国住所
+                %td= form.text_field :本国電話
+                %td= form.text_field :旅券番号
+                %td= form.text_field :旅券有効期限
+              %tr
+                %th 入国年月日
+                %th 生VISA種類
+                %th VISA更新日(1)
+                %th VISA更新日(2)
+                %th VISA更新日(3)
+                %th VISA更新日(4)
+                %th 入管許可番号
+                %th 入管許可日
+              %tr
+                %td= form.text_field :入国年月日
+                %td= form.text_field :生VISA種類
+                %td= form.text_field :VISA更新日1
+                %td= form.text_field :VISA更新日2
+                %td= form.text_field :VISA更新日3
+                %td= form.text_field :VISA更新日4
+                %td= form.text_field :入管許可番号
+                %td= form.text_field :入管許可日
+              %tr
+                %th 在留カード番号
+                %th 入学日
+                %th 卒修予定日
+                %th コース名
+                %th クラス名
+                %th 退学年月日
+                %th 除籍年月日
+                %th 退学除籍理由
+              %tr
+                %td= form.text_field :在留カード番号
+                %td= form.text_field :入学日
+                %td= form.text_field :卒修予定日
+                %td= form.text_field :コース名
+                %td= form.text_field :クラス名
+                %td= form.text_field :退学年月日
+                %td= form.text_field :除籍年月日
+                %td= form.text_field :退学除籍理由
+              %tr
+                %th 在籍卒業区分
+                %th 以前住所〒
+                %th 以前住所住
+                %th 現住所〒
+                %th 現住所住
+                %th 現住所電話
+                %th 携　帯電話
+                %th 国民健康保険番号
+              %tr
+                %td= form.text_field :在籍卒業区分
+                %td= form.text_field :以前住所〒
+                %td= form.text_field :以前住所住
+                %td= form.text_field :現住所〒
+                %td= form.text_field :現住所住
+                %td= form.text_field :現住所電話
+                %td= form.text_field :携　帯電話
+                %td= form.text_field :国民健康保険番号
+              %tr
+                %th 障害保険有無
+                %th 母国語
+                %th 卒業後進路先
+                %th 紹介者書体
+                %th 紹介者名1
+                %th 紹介者名2
+                %th 紹介者住所1
+                %th 紹介者住所2
+              %tr
+                %td= form.text_field :障害保険有無
+                %td= form.text_field :母国語
+                %td= form.text_field :卒業後進路先
+                %td= form.text_field :紹介者書体
+                %td= form.text_field :紹介者名1
+                %td= form.text_field :紹介者名2
+                %td= form.text_field :紹介者住所1
+                %td= form.text_field :紹介者住所2
+              %tr
+                %th 紹介者TEL
+                %th 紹介者FAX
+                %th J   ﾃｽﾄ
+                %th NAT ﾃｽﾄ
+                %th 入学ﾃｽﾄ
+                %th 組分ﾃｽﾄ
+              %tr
+                %td= form.text_field :紹介者TEL
+                %td= form.text_field :紹介者FAX
+                %td= form.text_field :Jﾃｽﾄ
+                %td= form.text_field :NATﾃｽﾄ
+                %td= form.text_field :入学ﾃｽﾄ
+                %td= form.text_field :組分ﾃｽﾄ
+            = form.submit '変更登録'
 
+
+
+        %l.list-item-group
+          .name-group
+          .status1
+          .phonegroup
       .item3-comment
-      -#   %form
-      -#   %input.interview{:type => "text", placeholder: "Interview Transcript"}/
-
+        %span.interview-header Interview Transcript
+        %i.material-icons edit
+        %form
+        %input.interview-form{:type => "text"}/ 
+        -# , placeholder: "Interview Transcript"
       .item4-detail-bottom
-      -#   .others
+        .others
+          = form_for @student do |form|
+            %table
+              %tr
+                %th 学籍番号
+                %th 登録番号
+                %th 本国氏名書体
+                %th 本国氏名1
+                %th 本国氏名2
+                %th フリガナ名
+                %th 性別
+                %th 未既婚
+              %tr
+                %td= form.text_field :学籍番号
+                %td= form.text_field :登録番号
+                %td= form.text_field :本国氏名書体
+                %td= form.text_field :本国氏名1
+                %td= form.text_field :本国氏名2
+                %td= form.text_field :フリガナ名
+                %td= form.text_field :性別
+                %td= form.text_field :未既婚
+              %tr
+                %th 国名
+                %th 生年月日
+                %th 紹介者名
+                %th 本国住所書体
+                %th 本国住所
+                %th 本国電話
+                %th 旅券番号
+                %th 旅券有効期限
+              %tr
+                %td= form.text_field :国名
+                %td= form.text_field :生年月日
+                %td= form.text_field :紹介者名
+                %td= form.text_field :本国住所書体
+                %td= form.text_field :本国住所
+                %td= form.text_field :本国電話
+                %td= form.text_field :旅券番号
+                %td= form.text_field :旅券有効期限
+              %tr
+                %th 入国年月日
+                %th 生VISA種類
+                %th VISA更新日(1)
+                %th VISA更新日(2)
+                %th VISA更新日(3)
+                %th VISA更新日(4)
+                %th 入管許可番号
+                %th 入管許可日
+              %tr
+                %td= form.text_field :入国年月日
+                %td= form.text_field :生VISA種類
+                %td= form.text_field :VISA更新日1
+                %td= form.text_field :VISA更新日2
+                %td= form.text_field :VISA更新日3
+                %td= form.text_field :VISA更新日4
+                %td= form.text_field :入管許可番号
+                %td= form.text_field :入管許可日
+              %tr
+                %th 在留カード番号
+                %th 入学日
+                %th 卒修予定日
+                %th コース名
+                %th クラス名
+                %th 退学年月日
+                %th 除籍年月日
+                %th 退学除籍理由
+              %tr
+                %td= form.text_field :在留カード番号
+                %td= form.text_field :入学日
+                %td= form.text_field :卒修予定日
+                %td= form.text_field :コース名
+                %td= form.text_field :クラス名
+                %td= form.text_field :退学年月日
+                %td= form.text_field :除籍年月日
+                %td= form.text_field :退学除籍理由
+              %tr
+                %th 在籍卒業区分
+                %th 以前住所〒
+                %th 以前住所住
+                %th 現住所〒
+                %th 現住所住
+                %th 現住所電話
+                %th 携　帯電話
+                %th 国民健康保険番号
+              %tr
+                %td= form.text_field :在籍卒業区分
+                %td= form.text_field :以前住所〒
+                %td= form.text_field :以前住所住
+                %td= form.text_field :現住所〒
+                %td= form.text_field :現住所住
+                %td= form.text_field :現住所電話
+                %td= form.text_field :携　帯電話
+                %td= form.text_field :国民健康保険番号
+              %tr
+                %th 障害保険有無
+                %th 母国語
+                %th 卒業後進路先
+                %th 紹介者書体
+                %th 紹介者名1
+                %th 紹介者名2
+                %th 紹介者住所1
+                %th 紹介者住所2
+              %tr
+                %td= form.text_field :障害保険有無
+                %td= form.text_field :母国語
+                %td= form.text_field :卒業後進路先
+                %td= form.text_field :紹介者書体
+                %td= form.text_field :紹介者名1
+                %td= form.text_field :紹介者名2
+                %td= form.text_field :紹介者住所1
+                %td= form.text_field :紹介者住所2
+              %tr
+                %th 紹介者TEL
+                %th 紹介者FAX
+                %th J   ﾃｽﾄ
+                %th NAT ﾃｽﾄ
+                %th 入学ﾃｽﾄ
+                %th 組分ﾃｽﾄ
+              %tr
+                %td= form.text_field :紹介者TEL
+                %td= form.text_field :紹介者FAX
+                %td= form.text_field :Jﾃｽﾄ
+                %td= form.text_field :NATﾃｽﾄ
+                %td= form.text_field :入学ﾃｽﾄ
+                %td= form.text_field :組分ﾃｽﾄ
+            = form.submit '変更登録'
 
 
-
-
-
-
-
-      .date-table-bottom
-        =render "edit-profile-student"
+      -# .date-table-bottom
+      -#   =render "edit-profile-student"
