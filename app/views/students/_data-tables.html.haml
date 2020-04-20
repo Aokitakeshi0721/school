@@ -1,119 +1,121 @@
 %table
-  %tr
-    %th 削除
-    %th 学籍番号
-    -# %th 登録番号
-    -# %th 本国氏名書体
-    %th クラス名
-    %th 本国氏名1
-    %th 本国氏名2
-    %th フリガナ名
-    %th 性別
-    %th 未既婚
-    %th 国名
-    %th 生年月日
-    -# %th 紹介者名
-    -# %th 本国住所書体
-    -# %th 本国住所
-    %th 本国電話
-    %th 旅券番号
-    %th 旅券有効期限
-    %th 入国年月日
-    -# %th 生VISA種類
-    -# %th VISA更新日(1)
-    -# %th VISA更新日(2)
-    -# %th VISA更新日(3)
-    -# %th VISA更新日(4)
-    -# %th 入管許可番号
-    -# %th 入管許可日
-    -# %th 在留カード番号
-    -# %th 入学日
-    -# %th 卒修予定日
-    -# %th コース名
-
-    -# %th 退学年月日
-    -# %th 除籍年月日
-    -# %th 退学除籍理由
-    -# %th 在籍卒業区分
-    -# %th 以前住所〒
-    -# %th 以前住所住
-    -# %th 現住所〒
-    -# %th 現住所住
-    -# %th 現住所電話
-    -# %th 携　帯電話
-    -# %th 国民健康保険番号
-    -# %th 障害保険有無
-    -# %th 母国語
-    -# %th 卒業後進路先
-    -# %th 紹介者書体
-    -# %th 紹介者名1
-    -# %th 紹介者名2
-    -# %th 紹介者住所1
-    -# %th 紹介者住所2
-    -# %th 紹介者TEL
-    -# %th 紹介者FAX
-    -# %th J   ﾃｽﾄ
-    -# %th NAT ﾃｽﾄ
-    -# %th 入学ﾃｽﾄ
-    -# %th 組分ﾃｽﾄ
-
-  - @students.each do |s|
+  = form_tag({ controller: :students, action: :destroy_all },method: 'delete', data: { confirm: '本当に削除しますか?' }) do # form_tagは何も指定しないとcreateが実行されてしまうので、method等は指定してあげてください
     %tr
-      %td= link_to "☑", student_path(s.id)
-      -# %i.material-icons delete_forever
-      %td= link_to s.学籍番号, edit_student_path(s.id)
-      -# %td= link_to s.学籍番号, sms_p_path(s.id)
-      -# %td= s.登録番号
-      -# %td= s.本国氏名書体
-      %td= s.クラス名
-      %td= s.本国氏名1
-      %td= s.本国氏名2
-      %td= s.フリガナ名
-      %td= s.性別
-      %td= s.未既婚
-      %td= s.国名
-      %td= s.生年月日
-      -# %td= s.紹介者名
-      -# %td= s.本国住所書体
-      -# %td= s.本国住所
-      %td= s.本国電話
-      %td= s.旅券番号
-      %td= s.旅券有効期限
-      %td= s.入国年月日
-      -# %td= s.生VISA種類
-      -# %td= s.VISA更新日1
-      -# %td= s.VISA更新日2
-      -# %td= s.VISA更新日3
-      -# %td= s.VISA更新日4
-      -# %td= s.入管許可番号
-      -# %td= s.入管許可日
-      -# %td= s.在留カード番号
-      -# %td= s.入学日
-      -# %td= s.卒修予定日
-      -# %td= s.コース名
+      %th= submit_tag "一括削除!"
+      %th 削除
+      %th 学籍番号
+      -# %th 登録番号
+      -# %th 本国氏名書体
+      %th クラス名
+      %th 本国氏名1
+      %th 本国氏名2
+      %th フリガナ名
+      %th 性別
+      %th 未既婚
+      %th 国名
+      %th 生年月日
+      -# %th 紹介者名
+      -# %th 本国住所書体
+      -# %th 本国住所
+      %th 本国電話
+      %th 旅券番号
+      %th 旅券有効期限
+      %th 入国年月日
+      -# %th 生VISA種類
+      -# %th VISA更新日(1)
+      -# %th VISA更新日(2)
+      -# %th VISA更新日(3)
+      -# %th VISA更新日(4)
+      -# %th 入管許可番号
+      -# %th 入管許可日
+      -# %th 在留カード番号
+      -# %th 入学日
+      -# %th 卒修予定日
+      -# %th コース名
 
-      -# %td= s.退学年月日
-      -# %td= s.除籍年月日
-      -# %td= s.退学除籍理由
-      -# %td= s.在籍卒業区分
-      -# %td= s.以前住所〒
-      -# %td= s.以前住所住
-      -# %td= s.現住所〒
-      -# %td= s.現住所住
-      -# %td= s.現住所電話
-      -# %td= s.携　帯電話
-      -# %td= s.国民健康保険番号
-      -# %td= s.障害保険有無
-      -# %td= s.母国語
-      -# %td= s.卒業後進路先
-      -# %td= s.紹介者書体
-      -# %td= s.紹介者名1
-      -# %td= s.紹介者名2
-      -# %td= s.紹介者住所1
-      -# %td= s.紹介者住所2
-      -# %td= s.紹介者TEL
-      -# %td= s.紹介者FAX
-      -# %td= s.Jﾃｽﾄ
-      -# %td= s.NATﾃｽﾄ
-      -# %td= s.入学ﾃｽﾄ
-      -# %td= s.組分ﾃｽﾄ
+      -# %th 退学年月日
+      -# %th 除籍年月日
+      -# %th 退学除籍理由
+      -# %th 在籍卒業区分
+      -# %th 以前住所〒
+      -# %th 以前住所住
+      -# %th 現住所〒
+      -# %th 現住所住
+      -# %th 現住所電話
+      -# %th 携　帯電話
+      -# %th 国民健康保険番号
+      -# %th 障害保険有無
+      -# %th 母国語
+      -# %th 卒業後進路先
+      -# %th 紹介者書体
+      -# %th 紹介者名1
+      -# %th 紹介者名2
+      -# %th 紹介者住所1
+      -# %th 紹介者住所2
+      -# %th 紹介者TEL
+      -# %th 紹介者FAX
+      -# %th J   ﾃｽﾄ
+      -# %th NAT ﾃｽﾄ
+      -# %th 入学ﾃｽﾄ
+      -# %th 組分ﾃｽﾄ
+    - @students.each do |s|
+      %tr
+        %td= check_box_tag "deletes[#{ s.id }]", s.id
+        %td= link_to "☑", student_path(s.id)
+        -# %i.material-icons delete_forever
+        %td= link_to s.学籍番号, edit_student_path(s.id)
+        -# %td= link_to s.学籍番号, sms_p_path(s.id)
+        -# %td= s.登録番号
+        -# %td= s.本国氏名書体
+        %td= s.クラス名
+        %td= s.本国氏名1
+        %td= s.本国氏名2
+        %td= s.フリガナ名
+        %td= s.性別
+        %td= s.未既婚
+        %td= s.国名
+        %td= s.生年月日
+        -# %td= s.紹介者名
+        -# %td= s.本国住所書体
+        -# %td= s.本国住所
+        %td= s.本国電話
+        %td= s.旅券番号
+        %td= s.旅券有効期限
+        %td= s.入国年月日
+        -# %td= s.生VISA種類
+        -# %td= s.VISA更新日1
+        -# %td= s.VISA更新日2
+        -# %td= s.VISA更新日3
+        -# %td= s.VISA更新日4
+        -# %td= s.入管許可番号
+        -# %td= s.入管許可日
+        -# %td= s.在留カード番号
+        -# %td= s.入学日
+        -# %td= s.卒修予定日
+        -# %td= s.コース名
+
+        -# %td= s.退学年月日
+        -# %td= s.除籍年月日
+        -# %td= s.退学除籍理由
+        -# %td= s.在籍卒業区分
+        -# %td= s.以前住所〒
+        -# %td= s.以前住所住
+        -# %td= s.現住所〒
+        -# %td= s.現住所住
+        -# %td= s.現住所電話
+        -# %td= s.携　帯電話
+        -# %td= s.国民健康保険番号
+        -# %td= s.障害保険有無
+        -# %td= s.母国語
+        -# %td= s.卒業後進路先
+        -# %td= s.紹介者書体
+        -# %td= s.紹介者名1
+        -# %td= s.紹介者名2
+        -# %td= s.紹介者住所1
+        -# %td= s.紹介者住所2
+        -# %td= s.紹介者TEL
+        -# %td= s.紹介者FAX
+        -# %td= s.Jﾃｽﾄ
+        -# %td= s.NATﾃｽﾄ
+        -# %td= s.入学ﾃｽﾄ
+        -# %td= s.組分ﾃｽﾄ
