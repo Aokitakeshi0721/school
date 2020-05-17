@@ -3,6 +3,9 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  # def buy
+  # end
+
   def import
     # fileはtmpに自動で一時保存される
     Student.import(params[:file])
